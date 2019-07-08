@@ -14,7 +14,7 @@ spec:
       jenkinsfile: |-
         node('') {
           stage 'buildInDevelopment'
-            openshiftBuild(namespace:'development',buildConfig: 'xhellopythonapp', showBuildLogs: 'true')
+            openshiftBuild(namespace:'development',buildConfig: 'hellopythonapp', showBuildLogs: 'true')
           stage 'deployInDevelopment'
             openshiftDeploy(namespace:'dev',deploymentConfig: 'welcome')
             openshiftScale(namespace:'dev',deploymentConfig: 'welcome',replicaCount: '5')
