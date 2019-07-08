@@ -17,7 +17,7 @@ spec:
             openshiftBuild(namespace:'development',buildConfig: 'hellopythonapp', showBuildLogs: 'true')
           stage 'deployInDevelopment'
             openshiftDeploy(namespace:'dev',deploymentConfig: 'welcome')
-            openshiftScale(namespace:'dev',deploymentConfig: 'welcome',replicaCount: '5')
+            openshiftScale(namespace:'dev',deploymentConfig: 'welcome',replicaCount: '4')
           stage 'deployInQA'
             input 'Proceeed ?'
             openshiftTag(namespace: 'dev', sourceStream: 'welcome',  sourceTag: 'latest', destinationStream: 'welcome', destinationTag: 'promoteToQA')
