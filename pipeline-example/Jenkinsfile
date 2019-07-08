@@ -1,6 +1,6 @@
 node {
   stage 'build in development'
-  openshiftBuild(namespace: 'dev', buildConfig: 'welcome', showBuildLogs: 'true')
+  openshiftBuild(namespace: 'development', buildConfig: 'hellopythonapp', showBuildLogs: 'true')
   
   stage 'deploy in development'
   openshiftDeploy(namespace: 'dev', deploymentConfig: 'welcome')
